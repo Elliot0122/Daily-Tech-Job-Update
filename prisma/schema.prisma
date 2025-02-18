@@ -1,0 +1,4 @@
+model Job {
+  required_qualification String?
+  preferred_qualification String?
+} 
