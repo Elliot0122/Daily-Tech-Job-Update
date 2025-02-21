@@ -22,14 +22,13 @@ export default function JobCard({ job }: JobCardProps) {
   const logoUrl = getImageUrl(job.company?.logo_url)
 
   const formatDate = (dateString: string) => {
-    // Create date object in UTC
-    const date = new Date(dateString + 'T00:00:00Z');
+    const date = new Date(dateString); // Just pass the date string directly
     
     return date.toLocaleDateString('en-US', {
       month: 'short',
       day: 'numeric',
       year: 'numeric',
-      timeZone: 'UTC' // Force UTC timezone
+      timeZone: 'UTC' // Keep UTC to prevent timezone conversion
     });
   };
 
